@@ -1,0 +1,80 @@
+{
+  "name": "@tomassabol/aws-common",
+  "version": "1.3.4-beta.1",
+  "description": "AWS Common Library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomassabol/aws-common.git"
+  },
+  "homepage": "https://github.com/tomassabol/aws-common#readme",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "lambda/**/*.js",
+    "lambda/**/*.d.ts",
+    "rest-api/**/*.js",
+    "rest-api/**/*.d.ts",
+    "test/**/*.js",
+    "test/**/*.d.ts",
+    "utils/**/*.js",
+    "utils/**/*.d.ts"
+  ],
+  "keywords": [
+    "aws",
+    "lambda",
+    "utilities",
+    "helpers",
+    "rest-api",
+    "axios",
+    "eventbridge"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf dist .coverage",
+    "coverage": "open .coverage/lcov-report/index.html",
+    "dist": "tsc -b tsconfig.build.json && cp package.json dist && cd dist && npm publish",
+    "format-check": "prettier --check .",
+    "husky-install": "husky install",
+    "lint": "eslint . --max-warnings 0",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@tomassabol/aws-services": "^1.8.3",
+    "@tomassabol/event-bus": "^1.0.0",
+    "axios": "^1.7.2"
+  },
+  "peerDependencies": {
+    "@aws-lambda-powertools/logger": "^2.0.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@types/aws-lambda": "^8.10.119",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^22.18.12",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "aws-lambda": "^1.0.7",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-markdown": "^3.0.0",
+    "husky": "^8.0.1",
+    "jest": "^29.4.3",
+    "jest-cli": "^29.4.3",
+    "lint-staged": "^15.2.10",
+    "prettier": "^2.6.2",
+    "prettier-plugin-sh": "^0.12.8",
+    "rimraf": "^5.0.0",
+    "ts-jest": "^29.1.5",
+    "typescript": "^5.9.3"
+  }
+}

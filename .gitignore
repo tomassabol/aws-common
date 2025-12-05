@@ -1,0 +1,5 @@
+.coverage
+.scannerwork
+.vscode
+dist
+node_modules

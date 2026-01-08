@@ -16,5 +16,5 @@ export function getServiceName(): string {
 
 export function setServiceName(serviceName: string) {
   service = serviceName
-  logger.appendKeys({ service })
+  logger.appendKeys({ serviceName })
 }
